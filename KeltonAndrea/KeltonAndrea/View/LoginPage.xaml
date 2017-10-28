@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea"              
+             x:Class="KeltonAndrea.View.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20"  VerticalOptions="Center">
+                <Image Source="logo.jpg" WidthRequest = "60" />
+                <StackLayout >
+                    <StackLayout Orientation="Horizontal">
+                        <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAUser}" 
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
+                        <Entry x:Name="Usuario" Text="{Binding NomeUsuario}" BindingContextChanged="CarregarValor" HorizontalOptions="FillAndExpand" Placeholder="Usuário" Style="{StaticResource Editor}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAPassword}" 
+                        HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
+                        <Entry x:Name="Senha" Text="{Binding SenhaUsuario}" BindingContextChanged="CarregarValor" HorizontalOptions="FillAndExpand" IsPassword="true" Placeholder="Senha" Style="{StaticResource Editor}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAInstitute}" 
+                        HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"/>
+                        <Entry x:Name="Organizacao" Text="{Binding OrganizacaoUsuario}" BindingContextChanged="CarregarValor" HorizontalOptions="FillAndExpand" Placeholder="Instituição" Style="{StaticResource Editor}" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Text="Entrar" Command="{Binding LoginCommand}" Style="{StaticResource Botao}" />
+                        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

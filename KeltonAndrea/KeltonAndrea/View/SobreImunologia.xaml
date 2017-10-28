@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea"  
+             x:Class="KeltonAndrea.View.SobreImunologia">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Margin="10,10,10,10">
+                <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FALogo}" 
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="28" TextColor ="Green"/>
+                <StackLayout>
+                    <Label Text="HLA" TextColor="DarkGreen"/>
+                    <Label Text="Em humanos, o MHC, complexo principal de histocompatibilidade, é denominado HLA (antígeno leucocitário humano). 
+                       A função de imunorregulação ocorre porque o HLA reconhece e expressa peptídeos na membrana celular para reconhecimento pelos linfocitos T"/>
+                    <Label Text="As classificações:"/>
+                    <Label Text="1) Classe 1: GenesA, B,	C, E, F, G. Existem mais de 12 mil alelos"/>
+                    <Label Text="2) Classe 2: Gene DRA, DRB,	DQA1,	DQB1,	DPA1,	DPA2,	DPB1	DPB2,	DMA,	DMB,	DOA,	DOB. Existem mais de 4 mil alelos  "/>
+
+                    <Label Text="Referências" TextColor ="Green"/>
+                    <Label TextColor ="Gray" FontSize="Small" Text="Torres, Elza Araujo; Ramalho, Renata Belmonte. O Complexo HLA. Revista Ciência e Educação. Disponível em: https://www.fc.unesp.br/Home/PosGraduacao/MestradoDoutorado/EducacaoparaaCiencia/revistacienciaeeducacao/cen02a10.pdf"/>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

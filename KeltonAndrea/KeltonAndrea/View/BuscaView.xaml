@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeltonAndrea.View.BuscaView"             
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Clicked="Sair"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout>
+                  <Label x:Name="Titulo2" Text="Busca de pacientes compatíveis" HorizontalOptions="Center" FontSize="Large" TextColor = "#339966"/>
+                  <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FASearch}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large"/>
+            </StackLayout>
+            <Frame VerticalOptions="Center">
+                <StackLayout>
+                    <StackLayout>
+                        <Entry x:Name="Identificador" Placeholder="Identificador" Text="{Binding Identificador}" VerticalOptions="Center" Style="{StaticResource Editor}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button Text="Buscar" Command="{Binding BuscarCommand}" Style="{StaticResource Botao}" />
+                        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

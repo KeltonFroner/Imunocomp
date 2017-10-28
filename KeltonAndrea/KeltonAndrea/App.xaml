@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeltonAndrea.App">
+	<Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="CorBotao">#339966</Color>
+            <!--Azul-->
+            <Color x:Key="CorDoTexto">#000a1a</Color>
+            <!--Azul-->
+            <Color x:Key="CorDaPagina">#ffffff</Color>            
+            <!--Cinza-->
+            <TextAlignment x:Key="AlinhamentoTexto">Center</TextAlignment>
+            <!--PAGINA LOGIN-->
+            <Style x:Key= "Botao" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource CorDaPagina}"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource CorBotao}"></Setter>
+            </Style>
+            <Style x:Key= "Editor" TargetType="Editor">
+                <Setter Property="TextColor" Value="{StaticResource CorDoTexto}"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

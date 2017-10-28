@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeltonAndrea.View.TelaPrincipal">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Command="{Binding ToolbarSairCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Image Source="logo.jpg" WidthRequest = "60" />
+            <StackLayout>
+                <Button Text="Cadastro de Usuario" Command="{Binding CadastroUsuario}" Style="{StaticResource Botao}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Cadastro de Paciente" Command="{Binding CadastroPaciente}" Style="{StaticResource Botao}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Lista Paciente" Command="{Binding ListaPaciente}" Style="{StaticResource Botao}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Busca"  Style="{StaticResource Botao}" Command="{Binding Busca}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Sobre" Command="{Binding Sobre}" Style="{StaticResource Botao}"/>
+            </StackLayout>
+            <StackLayout>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

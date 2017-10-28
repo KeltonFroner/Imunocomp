@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea" 
+             x:Class="KeltonAndrea.View.Sobre">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Clicked="Sair"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="10,10,10,10">
+            <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FALogo}" 
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="28" TextColor ="Green"/>
+            <StackLayout>
+                <Label Text="Aplicativo Compatibilidade Imunológica"/>
+                <Label Text="Alunos: Kelton Froner e Andrea Pires Waldman"/>
+                <Label Text="Professores: Juliana Herbert - Engenharia de Software 2 e  Luiz Rodrigues - Imunologia"/>
+                <Label Text="Agradecimentos: Heloisa Tarasconi do Laboratorio de Imunologia de Transplantes do 
+                       Hospital Dom Vicente Scherer da Santa Casa de Misericordia de Porto Alegre"/>
+                <Label Text="Aplicativo desenvolvido como requisito parcial para aprovação nas disciplinas de 
+                       Engenharia de software 2 e de Imunologia da Faculdade de Informática Biomédica da UFCSPA"/>
+                <Label Text="Recursos utilizados: Xamarin Forms, Azure, Microsoft SQL Server Management Studio"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

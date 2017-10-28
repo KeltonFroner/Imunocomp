@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeltonAndrea.View.ListaUsuariosView"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea"  
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Clicked="Sair"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <userControls:NListView x:Name="ListView" HasUnevenRows="true" Margin="10" ItemsSource="{Binding UsuariosCadastrados}" 
+                                    ItemTappedCommand="{Binding ShowJanelasCommand}" >
+                <!-- acima colocar ItemSelected="Handle_ItemSelected"-->
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <ViewCell.View >
+                                <Grid>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <StackLayout>
+                                            <StackLayout Orientation="Horizontal" IsVisible="False">
+                                                <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAPassword}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"/>
+                                                <Label x:Name="SenhaUsuario" Text="{Binding SenhaUsuario}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAInstitute}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="10"/>
+                                                <Label x:Name="Instituicao" Text="{Binding Instituicao}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAUser}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"/>
+                                                <Label x:Name="NomeUsuario"  Text="{Binding NomeUsuario}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </userControls:NListView>
+            <!--<StackLayout>
+                <Button Text="Adicionar outro usuario" Style="{StaticResource Botao}" Command="{Binding CadastrarCommand}"/>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            </StackLayout>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

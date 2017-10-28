@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea"
+             x:Class="KeltonAndrea.View.CadastroUsuarioView">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Clicked="Sair"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20"  VerticalOptions="Center">
+            <StackLayout>
+                <Label x:Name="Titulo" Text="Cadastro de Usuarios" HorizontalOptions="Center" FontSize="Large" TextColor = "#339966"/>
+            </StackLayout>
+            <Image Source="logo.jpg" WidthRequest = "60" />
+            
+            <StackLayout >
+                <StackLayout Orientation="Horizontal">
+                    <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAUser}" 
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
+                    <Entry x:Name="NomeUsuario" Placeholder="Nome" HorizontalOptions="FillAndExpand"  Style="{StaticResource Editor}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAInstitute}" 
+                        HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"/>
+                    <Entry x:Name="Instituicao" Placeholder="Instituição" HorizontalOptions="FillAndExpand"  Style="{StaticResource Editor}" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <userControls:FontAwesomeLabel Text="{x:Static userControls:Icon.FAPassword}" 
+                        HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
+                    <Entry x:Name="SenhaUsuario" Placeholder="SenhaUsuario" HorizontalOptions="FillAndExpand" IsPassword="true"  Style="{StaticResource Editor}"/>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Button Text="Cadastrar" Clicked="adddata" Style="{StaticResource Botao}"/>
+                    <Button Text="Exibir Usuarios" Clicked="Showdata" Style="{StaticResource Botao}"/>                   
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>   
+</ContentPage>

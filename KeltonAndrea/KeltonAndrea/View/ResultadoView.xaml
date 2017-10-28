@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:KeltonAndrea.Control;assembly=KeltonAndrea"  
+             x:Class="KeltonAndrea.View.ResultadoView"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Clicked="Sair"/>
+        <!--<ToolbarItem Text="Voltar" Command="{Binding ToolbarVoltarCommand}"/>--> 
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <userControls:NListView x:Name="ListView" HasUnevenRows="true" Margin="10" ItemsSource="{Binding PacientesCadastrados}" 
+                                    ItemTappedCommand="{Binding ShowJanelasCommand}" >
+                <!-- acima colocar ItemSelected="Handle_ItemSelected"-->
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <ViewCell.View >
+                                <Grid>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <StackLayout>
+                                            <Label x:Name="Identificador"  Text="{Binding Identificador}" />
+                                            <Label x:Name="Tipo" Text="{Binding Tipo}"/>
+                                            <Label x:Name="Idade"  Text="{Binding Idade}"/>
+                                            <Label x:Name="ABO" Text="{Binding ABO}"/>
+                                            <Label x:Name="Orgao"  Text="{Binding Orgao}"/>
+                                            <Label x:Name="Hla_a1" Text="{Binding Hla_a1}"/>
+                                            <Label x:Name="Hla_a2"  Text="{Binding Hla_a2}"/>
+                                            <Label x:Name="Hla_b1" Text="{Binding Hla_b1}"/>
+                                            <Label x:Name="Hla_b2"  Text="{Binding Hla_b2}"/>
+                                            <Label x:Name="Hla_c1" Text="{Binding Hla_c1}"/>
+                                            <Label x:Name="Hla_c2"  Text="{Binding Hla_c2}"/>
+                                            <Label x:Name="Hla_dq1" Text="{Binding Hla_dq1}"/>
+                                            <Label x:Name="Hla_dq2"  Text="{Binding Hla_dq2}"/>
+                                            <Label x:Name="Hla_dp1" Text="{Binding Hla_dp1}"/>
+                                            <Label x:Name="Hla_dp2"  Text="{Binding Hla_dp2}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </userControls:NListView>
+            <!--<StackLayout>
+                <Button Text="Realizar outra busca" Style="{StaticResource Botao}" Command="{Binding OutraBusca}"/>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="False" />
+            </StackLayout>-->  
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
